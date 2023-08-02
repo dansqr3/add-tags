@@ -40,6 +40,7 @@ enum Constants {
 
 	enum CollectionView {
 		static let cellIdentifier = "CellIdentifier"
+		static let cellButton = "cellButton"
 	}
 
 }

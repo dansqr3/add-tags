@@ -32,6 +32,7 @@
 		5AEC3FEF2A79E11A00CF998B /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FEE2A79E11A00CF998B /* TagCollectionView.swift */; };
 		5AEC3FF42A79E6EE00CF998B /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FF32A79E6EE00CF998B /* CellModel.swift */; };
 		5AEC3FF62A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */; };
+		5AEC3FF82A7A111000CF998B /* ProfileViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FF72A7A111000CF998B /* ProfileViewController+UICollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5AEC3FEE2A79E11A00CF998B /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
 		5AEC3FF32A79E6EE00CF998B /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		5AEC3FF72A7A111000CF998B /* ProfileViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				5AABEAC22A79C7C4003F8D2C /* ProfileViewController+ProfileViewInput.swift */,
 				5AABEAC42A79C7E6003F8D2C /* ProfileViewController+ProfileViewControllerDelegate.swift */,
 				5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */,
+				5AEC3FF72A7A111000CF998B /* ProfileViewController+UICollectionViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				5AEC3FEF2A79E11A00CF998B /* TagCollectionView.swift in Sources */,
 				5AABEAB12A79C6C1003F8D2C /* UIButton+.swift in Sources */,
 				5AEC3FF62A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift in Sources */,
+				5AEC3FF82A7A111000CF998B /* ProfileViewController+UICollectionViewDelegate.swift in Sources */,
 				5AABEAC92A79C802003F8D2C /* ProfileViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

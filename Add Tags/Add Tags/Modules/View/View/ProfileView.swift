@@ -11,7 +11,7 @@ class ProfileView: UIView {
 
 	weak var profileViewControllerDelegate: ProfileViewControllerDelegate?
 
-	private var scrollView: UIScrollView!
+	var scrollView: UIScrollView!
 
 	private var container: UIView!
 
@@ -28,7 +28,7 @@ class ProfileView: UIView {
 	private var skillsWrapper: UIView!
 	var skillsCollectionView: UICollectionView!
 	private var skillsTitle: UILabel!
-	private var skillsEditButton: UIButton!
+	var skillsEditButton: UIButton!
 
 	private var aboutView: UIView!
 	private var aboutTitle: UILabel!
@@ -51,6 +51,11 @@ class ProfileView: UIView {
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+
+	override func layoutIfNeeded() {
+		super.layoutIfNeeded()
+		
 	}
 
 	private func setupViews() {
@@ -288,26 +293,17 @@ class ProfileView: UIView {
 			aboutSubTitle.bottomAnchor.constraint(equalTo: aboutView.bottomAnchor),
 
 		])
-
-		print("skillsCollectionView.collectionViewLayout.collectionViewContentSize.height", skillsCollectionView.collectionViewLayout.collectionViewContentSize.height)
 	}
 
 	private func addTargets() {
 		skillsEditButton.addTarget(
 			self,
-			action: #selector(skillsEditButtonAction), for: .touchUpInside)
+			action: #selector(skillsEditButtonAction), for: .touchUpInside
+		)
 	}
 
 	@objc private func skillsEditButtonAction() {
-		print("skillsEditButtonAction")
+		profileViewControllerDelegate?.editButtonAction()
 	}
 
 }
-/*
- override func viewDidLayoutSubviews() {
-	 super.viewDidLayoutSubviews()
-	 let height = myCollectionView.collectionViewLayout.collectionViewContentSize.height
-	 myCollectionViewHeight.constant = height
-	 self.view.layoutIfNeeded()
- }
- */

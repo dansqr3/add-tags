@@ -28,17 +28,17 @@ class ProfileViewController: UIViewController {
 
 	}
 
-	override func viewWillLayoutSubviews() {
-		super.viewWillLayoutSubviews()
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
 		updateCollectionHeight()
 	}
 
 	private func setupDelegate() {
 		profileView.profileViewControllerDelegate = self
-//		tagsCollection.profileViewControllerDelegate = self
 
 		profileView.skillsCollectionView.dataSource = self
-//		profileView.skillsCollectionView.delegate = self
+		profileView.skillsCollectionView.delegate = self
+
 	}
 
 	private func setupViews() {
@@ -47,21 +47,19 @@ class ProfileViewController: UIViewController {
 		navigationController?.hidesBarsOnSwipe = true
 		navigationController?.navigationBar.backgroundColor = Constants.Profile.backgroundColor
 
-		collectionViewHeightConstraint = profileView.skillsCollectionView.heightAnchor.constraint(equalToConstant: (44 + 6) * 5)
+		collectionViewHeightConstraint = profileView
+			.skillsCollectionView
+			.heightAnchor
+			.constraint(equalToConstant: 3000)
 		collectionViewHeightConstraint.isActive = true
 	}
 
 	private func updateCollectionHeight() {
 
-		let currentContentHeight: CGFloat =
-			profileView
-				.skillsCollectionView
-				.collectionViewLayout
-				.collectionViewContentSize
-				.height
+		let currentContentHeight: CGFloat = profileView.skillsCollectionView.contentSize.height
+		print("currentContentHeight", currentContentHeight)
 
 		if currentContentHeight > 0 {
-			profileView.setupConstraints()
 			collectionViewHeightConstraint = profileView
 				.skillsCollectionView
 				.heightAnchor

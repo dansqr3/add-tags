@@ -22,6 +22,8 @@ extension ProfileViewController: UICollectionViewDataSource {
 			return UICollectionViewCell()
 		}
 
+		cell.profileViewControllerDelegate = self
+
 		output?.cellConfigure(cell: cell, at: indexPath)
 
 		return cell
