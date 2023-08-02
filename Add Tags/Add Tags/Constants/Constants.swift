@@ -38,4 +38,8 @@ enum Constants {
 		}
 	}
 
+	enum CollectionView {
+		static let cellIdentifier = "CellIdentifier"
+	}
+
 }

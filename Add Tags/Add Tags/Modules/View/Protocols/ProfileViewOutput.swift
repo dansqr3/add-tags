@@ -9,4 +9,8 @@ import Foundation
 
 protocol ProfileViewOutput: AnyObject {
 
+	var numberOfItemsInSection: Int { get }
+
+	func cellConfigure(cell: TagViewCell, at indexPath: IndexPath)
+
 }

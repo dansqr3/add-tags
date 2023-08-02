@@ -28,6 +28,10 @@
 		5AABEAC72A79C7F6003F8D2C /* ProfileViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABEAC62A79C7F6003F8D2C /* ProfileViewInput.swift */; };
 		5AABEAC92A79C802003F8D2C /* ProfileViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABEAC82A79C802003F8D2C /* ProfileViewOutput.swift */; };
 		5AABEACB2A79C82A003F8D2C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABEACA2A79C82A003F8D2C /* ProfilePresenter.swift */; };
+		5AEC3FED2A79E0FC00CF998B /* TagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FEC2A79E0FC00CF998B /* TagViewCell.swift */; };
+		5AEC3FEF2A79E11A00CF998B /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FEE2A79E11A00CF998B /* TagCollectionView.swift */; };
+		5AEC3FF42A79E6EE00CF998B /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FF32A79E6EE00CF998B /* CellModel.swift */; };
+		5AEC3FF62A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		5AABEAC62A79C7F6003F8D2C /* ProfileViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewInput.swift; sourceTree = "<group>"; };
 		5AABEAC82A79C802003F8D2C /* ProfileViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewOutput.swift; sourceTree = "<group>"; };
 		5AABEACA2A79C82A003F8D2C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		5AEC3FEC2A79E0FC00CF998B /* TagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewCell.swift; sourceTree = "<group>"; };
+		5AEC3FEE2A79E11A00CF998B /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		5AEC3FF32A79E6EE00CF998B /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				5AABEAB62A79C700003F8D2C /* ProfileModel.swift */,
+				5AEC3FF32A79E6EE00CF998B /* CellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 				5AABEABE2A79C781003F8D2C /* ProfileViewController.swift */,
 				5AABEAC22A79C7C4003F8D2C /* ProfileViewController+ProfileViewInput.swift */,
 				5AABEAC42A79C7E6003F8D2C /* ProfileViewController+ProfileViewControllerDelegate.swift */,
+				5AEC3FF52A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				5AABEAB92A79C724003F8D2C /* ProfileView.swift */,
+				5AEC3FF02A79E11F00CF998B /* TagCollection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +225,15 @@
 				5AABEAC82A79C802003F8D2C /* ProfileViewOutput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5AEC3FF02A79E11F00CF998B /* TagCollection */ = {
+			isa = PBXGroup;
+			children = (
+				5AEC3FEC2A79E0FC00CF998B /* TagViewCell.swift */,
+				5AEC3FEE2A79E11A00CF998B /* TagCollectionView.swift */,
+			);
+			path = TagCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,16 +314,20 @@
 				5AABEAA82A79C642003F8D2C /* Assembly.swift in Sources */,
 				5AABEABF2A79C781003F8D2C /* ProfileViewController.swift in Sources */,
 				5AABEAB72A79C700003F8D2C /* ProfileModel.swift in Sources */,
+				5AEC3FED2A79E0FC00CF998B /* TagViewCell.swift in Sources */,
 				5AABEABA2A79C724003F8D2C /* ProfileView.swift in Sources */,
 				5AABEA8E2A79C512003F8D2C /* AppDelegate.swift in Sources */,
 				5AABEA902A79C512003F8D2C /* SceneDelegate.swift in Sources */,
+				5AEC3FF42A79E6EE00CF998B /* CellModel.swift in Sources */,
 				5AABEAC52A79C7E6003F8D2C /* ProfileViewController+ProfileViewControllerDelegate.swift in Sources */,
 				5AABEAB52A79C6E8003F8D2C /* UIStackView+.swift in Sources */,
 				5AABEAAE2A79C696003F8D2C /* UILabel+.swift in Sources */,
 				5AABEAA62A79C632003F8D2C /* AssemblyProtocol.swift in Sources */,
 				5AABEACB2A79C82A003F8D2C /* ProfilePresenter.swift in Sources */,
 				5AABEAAB2A79C670003F8D2C /* Constants.swift in Sources */,
+				5AEC3FEF2A79E11A00CF998B /* TagCollectionView.swift in Sources */,
 				5AABEAB12A79C6C1003F8D2C /* UIButton+.swift in Sources */,
+				5AEC3FF62A79E8B600CF998B /* ProfileViewController+UICollectionViewDataSource.swift in Sources */,
 				5AABEAC92A79C802003F8D2C /* ProfileViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ class ProfileView: UIView {
 	private var profileLocationTitle: UILabel!
 
 	private var skillsWrapper: UIView!
-	private var skillsView: UIView!
+	var skillsCollectionView: UICollectionView!
 	private var skillsTitle: UILabel!
 	private var skillsEditButton: UIButton!
 
@@ -40,20 +40,18 @@ class ProfileView: UIView {
 		setupViews()
 
 		setupProfile()
+		setupCollection()
 
 		setupHierarchy()
 		setupAutoresizingMask()
 		setupConstraints()
 		addTargets()
 
-
 	}
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-
-
 
 	private func setupViews() {
 		backgroundColor = .systemBackground
@@ -66,10 +64,6 @@ class ProfileView: UIView {
 		scrollView.showsHorizontalScrollIndicator = false
 
 		skillsWrapper = UIView()
-
-		skillsView = UIView()
-		skillsView.backgroundColor = .systemBlue
-//		skillsView.backgroundColor = Constants.Profile.backgroundColor
 
 		skillsTitle = UILabel(
 			text: "Мои навыки",
@@ -98,6 +92,10 @@ class ProfileView: UIView {
 			numberOfLines: 0
 		)
 
+	}
+
+	private func setupCollection() {
+		skillsCollectionView = TagCollectionView()
 	}
 
 	private func setupProfile() {
@@ -156,7 +154,7 @@ class ProfileView: UIView {
 
 		skillsWrapper.addSubview(skillsTitle)
 		skillsWrapper.addSubview(skillsEditButton)
-		skillsWrapper.addSubview(skillsView)
+		skillsWrapper.addSubview(skillsCollectionView)
 
 		aboutView.addSubview(aboutTitle)
 		aboutView.addSubview(aboutSubTitle)
@@ -199,7 +197,7 @@ class ProfileView: UIView {
 			skillsWrapper,
 			skillsTitle,
 			skillsEditButton,
-			skillsView
+			skillsCollectionView
 		].forEach {
 			$0.translatesAutoresizingMaskIntoConstraints = false
 		}
@@ -207,7 +205,7 @@ class ProfileView: UIView {
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
 	}
 
-	private func setupConstraints() {
+	func setupConstraints() {
 
 		NSLayoutConstraint.activate([
 
@@ -221,8 +219,6 @@ class ProfileView: UIView {
 			scrollView.topAnchor.constraint(equalTo: topAnchor),
 			scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 
-//			profileWrapper.heightAnchor.constraint(equalToConstant: 387),
-
 			profileWrapper.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
 			profileWrapper.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
 			profileWrapper.topAnchor.constraint(equalTo: scrollView.topAnchor),
@@ -230,9 +226,6 @@ class ProfileView: UIView {
 			profileView.leadingAnchor.constraint(equalTo: profileWrapper.leadingAnchor),
 			profileView.trailingAnchor.constraint(equalTo: profileWrapper.trailingAnchor),
 			profileView.topAnchor.constraint(equalTo: profileWrapper.topAnchor, constant: 24),
-//			profileView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
-
-//			profileView.heightAnchor.constraint(equalToConstant: 244),
 
 			profileImage.topAnchor.constraint(equalTo: profileView.topAnchor),
 			profileImage.centerXAnchor.constraint(equalTo: profileView.centerXAnchor),
@@ -260,7 +253,6 @@ class ProfileView: UIView {
 			skillsWrapper.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
 			skillsWrapper.topAnchor.constraint(equalTo: profileWrapper.bottomAnchor, constant: 21),
 			skillsWrapper.bottomAnchor.constraint(equalTo: aboutView.topAnchor, constant: -24),
-			skillsWrapper.heightAnchor.constraint(equalToConstant: 500),
 			skillsWrapper.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32),
 
 			skillsTitle.topAnchor.constraint(equalTo: skillsWrapper.topAnchor),
@@ -275,10 +267,10 @@ class ProfileView: UIView {
 			skillsEditButton.heightAnchor.constraint(equalToConstant: 24),
 			skillsEditButton.widthAnchor.constraint(equalToConstant: 24),
 
-			skillsView.leadingAnchor.constraint(equalTo: skillsWrapper.leadingAnchor),
-			skillsView.trailingAnchor.constraint(equalTo: skillsWrapper.trailingAnchor),
-			skillsView.topAnchor.constraint(equalTo: skillsEditButton.bottomAnchor, constant: 16),
-			skillsView.bottomAnchor.constraint(equalTo: skillsWrapper.bottomAnchor),
+			skillsCollectionView.leadingAnchor.constraint(equalTo: skillsWrapper.leadingAnchor),
+			skillsCollectionView.trailingAnchor.constraint(equalTo: skillsWrapper.trailingAnchor),
+			skillsCollectionView.topAnchor.constraint(equalTo: skillsEditButton.bottomAnchor, constant: 16),
+			skillsCollectionView.bottomAnchor.constraint(equalTo: skillsWrapper.bottomAnchor),
 
 			aboutView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
 			aboutView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
@@ -296,6 +288,8 @@ class ProfileView: UIView {
 			aboutSubTitle.bottomAnchor.constraint(equalTo: aboutView.bottomAnchor),
 
 		])
+
+		print("skillsCollectionView.collectionViewLayout.collectionViewContentSize.height", skillsCollectionView.collectionViewLayout.collectionViewContentSize.height)
 	}
 
 	private func addTargets() {
@@ -309,3 +303,11 @@ class ProfileView: UIView {
 	}
 
 }
+/*
+ override func viewDidLayoutSubviews() {
+	 super.viewDidLayoutSubviews()
+	 let height = myCollectionView.collectionViewLayout.collectionViewContentSize.height
+	 myCollectionViewHeight.constant = height
+	 self.view.layoutIfNeeded()
+ }
+ */
