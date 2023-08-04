@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
 	var output: ProfileViewOutput?
 
 	let profileView = ProfileView()
 
-	private var collectionViewHeightConstraint: NSLayoutConstraint!
+	private var collectionViewHeightConstraint: NSLayoutConstraint = .init()
+
+	var width: CGFloat {
+		profileView.skillsCollectionView.contentSize.width
+	}
 
 	override func loadView() {
 		view = profileView
@@ -22,15 +26,22 @@ class ProfileViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+
 		setupDelegate()
 
 		setupViews()
 
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		setupCollectionHeight()
+		print("view.frame.width", width)
+	}
+
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-		updateCollectionHeight()
+		setupCollectionHeight()
 	}
 
 	private func setupDelegate() {
@@ -38,7 +49,6 @@ class ProfileViewController: UIViewController {
 
 		profileView.skillsCollectionView.dataSource = self
 		profileView.skillsCollectionView.delegate = self
-
 	}
 
 	private func setupViews() {
@@ -46,24 +56,18 @@ class ProfileViewController: UIViewController {
 
 		navigationController?.hidesBarsOnSwipe = true
 		navigationController?.navigationBar.backgroundColor = Constants.Profile.backgroundColor
-
-		collectionViewHeightConstraint = profileView
-			.skillsCollectionView
-			.heightAnchor
-			.constraint(equalToConstant: 3000)
-		collectionViewHeightConstraint.isActive = true
 	}
 
-	private func updateCollectionHeight() {
+	func setupCollectionHeight() {
 
-		let currentContentHeight: CGFloat = profileView.skillsCollectionView.contentSize.height
-		print("currentContentHeight", currentContentHeight)
+		collectionViewHeightConstraint.isActive = false
+		let defaultContentHeight: CGFloat = profileView.skillsCollectionView.contentSize.height
 
-		if currentContentHeight > 0 {
+		if defaultContentHeight > 0 {
 			collectionViewHeightConstraint = profileView
 				.skillsCollectionView
 				.heightAnchor
-				.constraint(equalToConstant: currentContentHeight)
+				.constraint(equalToConstant: defaultContentHeight)
 			collectionViewHeightConstraint.isActive = true
 		}
 	}

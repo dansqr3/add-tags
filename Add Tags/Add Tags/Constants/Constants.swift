@@ -9,6 +9,11 @@ import UIKit
 
 enum Constants {
 
+	enum Space {
+		static let leading: CGFloat = 16
+		static let top: CGFloat = 24
+	}
+
 	enum Profile {
 		static var backgroundColor: UIColor {
 			UIColor(red: 0.953, green: 0.953, blue: 0.961, alpha: 1)
@@ -29,6 +34,11 @@ enum Constants {
 			static let location = "location"
 		}
 
+		enum Font {
+			static let title: UIFont = .systemFont(ofSize: 24, weight: .bold)
+			static let subTitle: UIFont = .systemFont(ofSize: 14)
+		}
+
 	}
 
 	enum Skills {
@@ -36,11 +46,41 @@ enum Constants {
 			static let edit = "buttonEdit"
 			static let done = "buttonDone"
 		}
+
+		enum Font {
+			static let title: UIFont = .systemFont(ofSize: 16)
+		}
+	}
+
+	enum About {
+		enum Font {
+			static let title: UIFont = .systemFont(ofSize: 16, weight: .medium)
+			static let subTitle: UIFont = .systemFont(ofSize: 14)
+		}
 	}
 
 	enum CollectionView {
 		static let cellIdentifier = "CellIdentifier"
 		static let cellButton = "cellButton"
+
+		static let heightDimension: CGFloat = 56
+		static let spacing: CGFloat = 12
+	}
+
+	enum Cell {
+
+		static let cornerRadius: CGFloat = 12
+
+		static let stackViewSpace: CGFloat = 10
+
+		enum Font {
+			static let title: UIFont = .systemFont(ofSize: 14)
+		}
+
+		enum Space {
+			static let leading: CGFloat = 24
+			static let top: CGFloat = 12
+		}
 	}
 
 }

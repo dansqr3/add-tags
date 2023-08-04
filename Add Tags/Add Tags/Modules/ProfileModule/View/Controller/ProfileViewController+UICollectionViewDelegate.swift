@@ -9,11 +9,6 @@ import UIKit
 
 extension ProfileViewController: UICollectionViewDelegate {
 
-//	override func setEditing(_ editing: Bool, animated: Bool) {
-//		super.setEditing(editing, animated: animated)
-//		print("setediting")
-//	}
-
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		output?.didSelectItemAt(with: indexPath)
 	}

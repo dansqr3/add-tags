@@ -11,7 +11,7 @@ protocol ProfileViewOutput: AnyObject {
 
 	var numberOfItemsInSection: Int { get }
 
-	func cellConfigure(cell: TagViewCell, at indexPath: IndexPath)
+	func cellConfigure(cell: TagViewCell, at indexPath: IndexPath, and width: CGFloat)
 
 	func editButtonAction()
 

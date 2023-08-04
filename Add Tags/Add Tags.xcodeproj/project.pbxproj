@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5C3AB12A7CCA4A0025AA4C /* ProfilePresenter+ProfileViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C3AB02A7CCA4A0025AA4C /* ProfilePresenter+ProfileViewOutput.swift */; };
+		5A5C3AB32A7CCA920025AA4C /* ProfilePresenter+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C3AB22A7CCA920025AA4C /* ProfilePresenter+UITextFieldDelegate.swift */; };
+		5A5C3AB52A7CCAC50025AA4C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C3AB42A7CCAC50025AA4C /* DataManager.swift */; };
+		5A5C3AB82A7CCB440025AA4C /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C3AB72A7CCB440025AA4C /* DataManagerProtocol.swift */; };
 		5AABEA8E2A79C512003F8D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABEA8D2A79C512003F8D2C /* AppDelegate.swift */; };
 		5AABEA902A79C512003F8D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABEA8F2A79C512003F8D2C /* SceneDelegate.swift */; };
 		5AABEA952A79C512003F8D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AABEA932A79C512003F8D2C /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A5C3AB02A7CCA4A0025AA4C /* ProfilePresenter+ProfileViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfilePresenter+ProfileViewOutput.swift"; sourceTree = "<group>"; };
+		5A5C3AB22A7CCA920025AA4C /* ProfilePresenter+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfilePresenter+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		5A5C3AB42A7CCAC50025AA4C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5A5C3AB72A7CCB440025AA4C /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
 		5AABEA8A2A79C512003F8D2C /* Add Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Add Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AABEA8D2A79C512003F8D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AABEA8F2A79C512003F8D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +85,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A5C3AB62A7CCAD00025AA4C /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5A5C3AB72A7CCB440025AA4C /* DataManagerProtocol.swift */,
+				5A5C3AB42A7CCAC50025AA4C /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		5A5C3AB92A7CD5FA0025AA4C /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				5AABEAB82A79C70C003F8D2C /* Model */,
+				5AABEABB2A79C737003F8D2C /* View */,
+				5AABEACC2A79C832003F8D2C /* Presenter */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
 		5AABEA812A79C512003F8D2C = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +126,7 @@
 				5AABEAA92A79C650003F8D2C /* Assembly */,
 				5AABEAA42A79C597003F8D2C /* Application */,
 				5AABEAAC2A79C679003F8D2C /* Constants */,
+				5A5C3AB62A7CCAD00025AA4C /* DataManager */,
 				5AABEAAF2A79C69E003F8D2C /* Extensions */,
 				5AABEAA32A79C58F003F8D2C /* Modules */,
 				5AABEAA22A79C586003F8D2C /* Storyboard */,
@@ -128,9 +156,7 @@
 		5AABEAA32A79C58F003F8D2C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5AABEAB82A79C70C003F8D2C /* Model */,
-				5AABEABB2A79C737003F8D2C /* View */,
-				5AABEACC2A79C832003F8D2C /* Presenter */,
+				5A5C3AB92A7CD5FA0025AA4C /* ProfileModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -217,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				5AABEACA2A79C82A003F8D2C /* ProfilePresenter.swift */,
+				5A5C3AB02A7CCA4A0025AA4C /* ProfilePresenter+ProfileViewOutput.swift */,
+				5A5C3AB22A7CCA920025AA4C /* ProfilePresenter+UITextFieldDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -314,16 +342,20 @@
 				5AABEAC32A79C7C4003F8D2C /* ProfileViewController+ProfileViewInput.swift in Sources */,
 				5AABEAB32A79C6D8003F8D2C /* UIImageView+.swift in Sources */,
 				5AABEAC72A79C7F6003F8D2C /* ProfileViewInput.swift in Sources */,
+				5A5C3AB12A7CCA4A0025AA4C /* ProfilePresenter+ProfileViewOutput.swift in Sources */,
 				5AABEAA82A79C642003F8D2C /* Assembly.swift in Sources */,
+				5A5C3AB32A7CCA920025AA4C /* ProfilePresenter+UITextFieldDelegate.swift in Sources */,
 				5AABEABF2A79C781003F8D2C /* ProfileViewController.swift in Sources */,
 				5AABEAB72A79C700003F8D2C /* ProfileModel.swift in Sources */,
 				5AEC3FED2A79E0FC00CF998B /* TagViewCell.swift in Sources */,
 				5AABEABA2A79C724003F8D2C /* ProfileView.swift in Sources */,
+				5A5C3AB52A7CCAC50025AA4C /* DataManager.swift in Sources */,
 				5AABEA8E2A79C512003F8D2C /* AppDelegate.swift in Sources */,
 				5AABEA902A79C512003F8D2C /* SceneDelegate.swift in Sources */,
 				5AEC3FF42A79E6EE00CF998B /* CellModel.swift in Sources */,
 				5AABEAC52A79C7E6003F8D2C /* ProfileViewController+ProfileViewControllerDelegate.swift in Sources */,
 				5AABEAB52A79C6E8003F8D2C /* UIStackView+.swift in Sources */,
+				5A5C3AB82A7CCB440025AA4C /* DataManagerProtocol.swift in Sources */,
 				5AABEAAE2A79C696003F8D2C /* UILabel+.swift in Sources */,
 				5AABEAA62A79C632003F8D2C /* AssemblyProtocol.swift in Sources */,
 				5AABEACB2A79C82A003F8D2C /* ProfilePresenter.swift in Sources */,
@@ -485,8 +517,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,9 +526,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dansqr3.Add-Tags";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -513,8 +548,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,9 +557,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dansqr3.Add-Tags";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

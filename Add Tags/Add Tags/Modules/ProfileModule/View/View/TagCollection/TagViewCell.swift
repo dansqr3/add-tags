@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TagViewCell: UICollectionViewCell {
+final class TagViewCell: UICollectionViewCell {
 
-	var titleLabel: UILabel!
+	private var titleLabel: UILabel!
 	var button: UIButton!
 	var stackView: UIStackView!
 
@@ -32,13 +32,13 @@ class TagViewCell: UICollectionViewCell {
 	private func setupViews() {
 		backgroundColor = Constants.Profile.backgroundColor
 
-		layer.cornerRadius = 12
+		layer.cornerRadius = Constants.Cell.cornerRadius
 		layer.masksToBounds = true
 
 		titleLabel = UILabel(
 			text: "",
 			textColor: .label,
-			font: .systemFont(ofSize: 14),
+			font: Constants.Cell.Font.title,
 			numberOfLines: 1,
 			alignment: .center
 		)
@@ -48,7 +48,7 @@ class TagViewCell: UICollectionViewCell {
 
 		stackView = UIStackView(
 			axis: .horizontal,
-			spacing: 10,
+			spacing: Constants.Cell.stackViewSpace,
 			distribution: .fill
 		)
 
@@ -67,10 +67,10 @@ class TagViewCell: UICollectionViewCell {
 			stackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 			stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
-			stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-			stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-			stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-			stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+			stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Cell.Space.leading),
+			stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Cell.Space.leading),
+			stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Cell.Space.top),
+			stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Cell.Space.top)
 		])
 	}
 
@@ -95,6 +95,9 @@ class TagViewCell: UICollectionViewCell {
 			stackView.addArrangedSubview(button)
 			button.tag = tag + 1
 			button.isHidden = false
+		} else {
+			button.isHidden = true
+			stackView.removeArrangedSubview(button)
 		}
 		titleLabel.text = model.title
 	}

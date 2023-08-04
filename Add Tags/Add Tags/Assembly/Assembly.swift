@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Assembly: AssemblyProtocol {
+final class Assembly: AssemblyProtocol {
 
 	func createProfile() -> UIViewController {
 

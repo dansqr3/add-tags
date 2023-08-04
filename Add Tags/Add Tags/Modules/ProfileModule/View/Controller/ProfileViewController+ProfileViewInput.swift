@@ -33,8 +33,6 @@ extension ProfileViewController: ProfileViewInput {
 
 	func updateCollection() {
 		profileView.skillsCollectionView.reloadData()
-		profileView.skillsCollectionView.layoutSubviews()
-		profileView.skillsCollectionView.layoutIfNeeded()
 	}
 
 	func createAlert(_ alertController: UIAlertController) {
@@ -49,5 +47,14 @@ extension ProfileViewController: ProfileViewInput {
 
 			cell.button.tag = $0 + 1
 		}
+
+		updateCollection()
 	}
+
+	func updateLayout() {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+			self.setupCollectionHeight()
+		}
+	}
+
 }

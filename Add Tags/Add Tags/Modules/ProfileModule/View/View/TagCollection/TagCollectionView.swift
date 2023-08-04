@@ -7,18 +7,13 @@
 
 import UIKit
 
-class TagCollectionView: UICollectionView {
+final class TagCollectionView: UICollectionView {
 
 	weak var profileViewControllerDelegate: ProfileViewControllerDelegate?
 
 	init() {
 		let layout = UICollectionViewFlowLayout()
 		super.init(frame: .zero, collectionViewLayout: layout)
-
-		layout.minimumLineSpacing = 12
-		layout.minimumInteritemSpacing = 12
-
-		layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 
 		setupCollectionView()
 		cellRegister()
@@ -48,14 +43,13 @@ class TagCollectionView: UICollectionView {
 
 		let groupSize = NSCollectionLayoutSize(
 			widthDimension: .fractionalWidth(1.0),
-			heightDimension: .absolute(44)
+			heightDimension: .absolute(Constants.CollectionView.heightDimension)
 		)
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-		let spacing = CGFloat(12)
-		group.interItemSpacing = .fixed(spacing)
+		group.interItemSpacing = .fixed(Constants.CollectionView.spacing)
 
 		let section = NSCollectionLayoutSection(group: group)
-		section.interGroupSpacing = spacing
+		section.interGroupSpacing = Constants.CollectionView.spacing
 
 		let layout = UICollectionViewCompositionalLayout(section: section)
 		return layout

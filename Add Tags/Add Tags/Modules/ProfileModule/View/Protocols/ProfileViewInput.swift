@@ -17,4 +17,6 @@ protocol ProfileViewInput: AnyObject {
 
 	func updateTags(_ source: [CellModel])
 
+	func updateLayout()
+
 }
