@@ -1,10 +1,10 @@
-# add-tags - Мини-приложение по добаужлению и удалению тэгов
+# add-tags - Мини-приложение по добавлению и удалению тэгов
 
 [Макет](https://www.figma.com/file/xfRZ6MHiLNO9BSUN9uVhnN/iOS-%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F?type=design&node-id=0-1&mode=design&t=baN0ybNeb4z1AJ1j-0) проекта.
 
-<img src="/Source/1. Screen.png" height="450">
-<img src="/Source/2. Animation.gif" height="450">
-<img src="/Source/3. Cell.gif" height="450">
+<img src="/Source/1. Screen.png" height="450"> <img src="/Source/2. Animation.gif" height="450"> <img src="/Source/3. Cell.gif" height="450">
+
+#### В приложении заложен функционал мини-резюме, блок “Мои навыки” - редактируемый, остальное - хардкод. Экран умеет скроллиться.
 
 ### Состав экрана
 1. Заголовок “Профиль”.
